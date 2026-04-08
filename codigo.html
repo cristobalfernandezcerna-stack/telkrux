@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TELKRUX | Por qué código puro vs WordPress</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Estilos adicionales para la página explicativa */
+        .page-header {
+            min-height: 40vh;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--gray-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px 60px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contenido-explicativo {
+            padding: 60px 0;
+        }
+
+        .comparacion-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .comparacion-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 24px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .comparacion-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .comparacion-card h3 i {
+            margin-right: 0.5rem;
+        }
+
+        .comparacion-card ul {
+            list-style: none;
+        }
+
+        .comparacion-card li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .comparacion-card .check {
+            color: #00C853;
+        }
+
+        .comparacion-card .times {
+            color: #FF4444;
+        }
+
+        .beneficio-detalle {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 24px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            margin-bottom: 2rem;
+        }
+
+        .beneficio-detalle h3 {
+            color: var(--cyan);
+            margin-bottom: 1rem;
+        }
+
+        .beneficio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .beneficio-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .beneficio-item i {
+            font-size: 2.5rem;
+            color: var(--cyan);
+            margin-bottom: 1rem;
+        }
+
+        .beneficio-item h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .beneficio-item p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .cta-final {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            border-radius: 24px;
+            margin-top: 40px;
+        }
+
+        .cta-final h3 {
+            color: var(--bg-dark);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-final p {
+            color: var(--bg-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: var(--bg-dark);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .comparacion-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">TELKRUX</span>
+                <span class="logo-dot">✦</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
+                <li><a href="index.html#testimonios" class="nav-link">Testimonios</a></li>
+                <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <section class="page-header">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-text">✦ CÓDIGO PURO VS WORDPRESS</span>
+            </div>
+            <h1>¿Por qué <span class="gradient-text">código puro</span> es mejor para tu negocio?</h1>
+            <p>En TELKRUX desarrollamos webs desde cero con HTML, CSS y JavaScript. Sin plantillas, sin plugins, sin límites.</p>
+        </div>
+    </section>
+
+    <!-- COMPARACIÓN -->
+    <section class="contenido-explicativo">
+        <div class="container">
+            <div class="comparacion-grid">
+                <div class="comparacion-card">
+                    <h3><i class="fas fa-code" style="color: var(--cyan);"></i> Código Puro (TELKRUX)</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle check"></i> Velocidad de carga ultrarrápida</li>
+                        <li><i class="fas fa-check-circle check"></i> Sin vulnerabilidades de plugins</li>
+                        <li><i class="fas fa-check-circle check"></i> Diseño 100% personalizado</li>
+                        <li><i class="fas fa-check-circle check"></i> Código limpio y optimizado</li>
+                        <li><i class="fas fa-check-circle check"></i> Mejor posicionamiento SEO</li>
+                        <li><i class="fas fa-check-circle check"></i> Sin actualizaciones forzadas</li>
+                        <li><i class="fas fa-check-circle check"></i> Total libertad de diseño</li>
+                    </ul>
+                </div>
+                <div class="comparacion-card">
+                    <h3><i class="fab fa-wordpress"></i> WordPress</h3>
+                    <ul>
+                        <li><i class="fas fa-times-circle times"></i> Más lento por plugins y temas</li>
+                        <li><i class="fas fa-times-circle times"></i> Vulnerable a ataques comunes</li>
+                        <li><i class="fas fa-times-circle times"></i> Plantillas limitadas</li>
+                        <li><i class="fas fa-times-circle times"></i> Código redundante</li>
+                        <li><i class="fas fa-times-circle times"></i> SEO limitado por plugins</li>
+                        <li><i class="fas fa-times-circle times"></i> Actualizaciones constantes</li>
+                        <li><i class="fas fa-times-circle times"></i> Dependencia de terceros</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BENEFICIOS DETALLADOS -->
+            <div class="beneficio-detalle">
+                <h3>🚀 Velocidad y rendimiento</h3>
+                <p>Una web en código puro carga hasta <strong>3 veces más rápido</strong> que una en WordPress. Google premia la velocidad con mejor posicionamiento, y los usuarios no esperan páginas lentas.</p>
+            </div>
+
+            <div class="beneficio-detalle">
+                <h3>🔒 Seguridad garantizada</h3>
+                <p>WordPress es el CMS más atacado del mundo por su popularidad. Con código puro, <strong>no existen plugins vulnerables</strong> ni actualizaciones de seguridad constantes. Tu web es prácticamente invulnerable.</p>
+            </div>
+
+            <div class="beneficio-detalle">
+                <h3>🎨 Diseño sin límites</h3>
+                <p>Con WordPress estás atado a lo que permita tu tema o plugin. Con código puro, <strong>todo es posible</strong>. Animaciones personalizadas, interacciones únicas, cualquier diseño que imagines.</p>
+            </div>
+
+            <div class="beneficio-detalle">
+                <h3>📈 SEO superior</h3>
+                <p>Código limpio, semántico y optimizado = mejor indexación en Google. No necesitas plugins de SEO que ralentizan tu web. <strong>El código habla por sí mismo</strong>.</p>
+            </div>
+
+            <div class="beneficio-grid">
+                <div class="beneficio-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h4>Hasta 3x más rápida</h4>
+                    <p>Comparado con webs en WordPress</p>
+                </div>
+                <div class="beneficio-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <p>Sin actualizaciones forzadas</p>
+                </div>
+                <div class="beneficio-item">
+                    <i class="fas fa-paint-brush"></i>
+                    <p>Diseño a medida sin plantillas</p>
+                </div>
+            </div>
+
+            <!-- CTA FINAL -->
+            <div class="cta-final">
+                <h3>¿Listo para una web <span style="color: var(--bg-dark);">realmente profesional</span>?</h3>
+                <p>Olvídate de WordPress, plugins lentos y vulnerabilidades.</p>
+                <a href="index.html#contacto" class="btn-cta">Solicitar presupuesto <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo"><span class="logo-text">TELKRUX</span><span class="logo-dot">✦</span></div>
+                    <p>Creamos experiencias digitales que transforman negocios.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#servicios">Servicios</a></li>
+                        <li><a href="portafolio.html">Portafolio</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="porque-codigo-puro.html">Por qué código puro</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TELKRUX. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

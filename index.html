@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TELKRUX | Web · Landing · Mantenimiento</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">TELKRUX</span>
+                <span class="logo-dot">✦</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="portafolio.html" class="nav-link">Portafolio</a></li>
+                <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-text">✦ TELKRUX 2026</span>
+            </div>
+            <h1 class="hero-title">
+                Creamos <span class="gradient-text">experiencias digitales</span><br>
+                que venden
+            </h1>
+            <p class="hero-subtitle">
+                Web Institucional · Landing Page · Mantenimiento Mensual<br>
+                Para PYMES que quieren destacar.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn-primary">
+                    Solicitar presupuesto <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="portafolio.html" class="btn-secondary">
+                    Ver trabajos <i class="fas fa-eye"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Desplázate</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- SERVICIOS (SOLO 3) -->
+    <section id="servicios" class="servicios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">✦ SERVICIOS</span>
+                <h2>Nuestros servicios</h2>
+                <p>Soluciones web sin complicaciones para tu negocio</p>
+            </div>
+            <div class="servicios-grid">
+                
+                <!-- Servicio 1: Web Institucional -->
+                <div class="servicio-card">
+                    <div class="servicio-icon"><i class="fas fa-building"></i></div>
+                    <h3>Web Institucional</h3>
+                    <p>Tu negocio con presencia online seria y profesional. Diseño responsive, formulario de contacto y botón de WhatsApp.</p>
+                    <div class="servicio-precio">Desde 300$</div>
+                    <a href="#contacto" class="servicio-link">Consultar <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Servicio 2: Landing Page -->
+                <div class="servicio-card">
+                    <div class="servicio-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Landing Page</h3>
+                    <p>Página única enfocada a convertir visitantes en clientes. Ideal para promociones, lanzamientos o campañas.</p>
+                    <div class="servicio-precio">Desde 150$</div>
+                    <a href="#contacto" class="servicio-link">Consultar <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Servicio 3: Mantenimiento Mensual -->
+                <div class="servicio-card">
+                    <div class="servicio-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Mantenimiento Mensual</h3>
+                    <p>Actualizaciones, copias de seguridad y soporte prioritario. Tu web siempre segura y actualizada.</p>
+                    <div class="servicio-precio">30$/mes</div>
+                    <a href="#contacto" class="servicio-link">Consultar <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTAFOLIO (SOLO BOTÓN - SIN TARJETAS) -->
+    <section id="portafolio" class="portafolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">✦ PORTAFOLIO</span>
+                <h2>Nuestros proyectos</h2>
+                <p>Descubre los sitios web que hemos creado para nuestros clientes</p>
+            </div>
+            <div class="portafolio-cta" style="text-align: center; padding: 40px 0;">
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <i class="fas fa-folder-open" style="font-size: 4rem; color: var(--cyan); margin-bottom: 1rem; display: block;"></i>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">¿Quieres ver más?</h3>
+                    <p style="color: var(--gray); margin-bottom: 2rem;">Explora todos nuestros trabajos en la sección de portafolio.</p>
+                    <a href="portafolio.html" class="btn-primary" style="background: transparent; border: 1px solid var(--cyan); color: var(--cyan);">
+                        Ver todos los proyectos <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="testimonios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">✦ TESTIMONIOS</span>
+                <h2>Lo que dicen nuestros clientes</h2>
+                <p>La satisfacción de nuestros clientes es nuestra mejor carta de presentación</p>
+            </div>
+            <div class="testimonios-grid">
+                <div class="testimonio-card">
+                    <div class="testimonio-quote">"</div>
+                    <p class="testimonio-text">TELKRUX transformó por completo nuestra presencia digital. El resultado superó todas nuestras expectativas.</p>
+                    <div class="testimonio-author">
+                        <div class="author-info">
+                            <h4>María Carrasco</h4>
+                            <p>CEO, empresa.cl</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonio-card">
+                    <div class="testimonio-quote">"</div>
+                    <p class="testimonio-text">La landing page que hicieron para nuestra campaña aumentó las ventas un 150%. Increíble trabajo.</p>
+                    <div class="testimonio-author">
+                        <div class="author-info">
+                            <h4>Javier Díaz</h4>
+                            <p>Fundador, tienda.cl</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonio-card">
+                    <div class="testimonio-quote">"</div>
+                    <p class="testimonio-text">El servicio de mantenimiento mensual nos da tranquilidad. Siempre atentos y rápidos.</p>
+                    <div class="testimonio-author">
+                        <div class="author-info">
+                            <h4>Laura Rodríguez</h4>
+                            <p>Directora, negocio.cl</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="nosotros">
+        <div class="container">
+            <div class="nosotros-grid">
+                <div class="nosotros-content">
+                    <span class="section-tag">✦ NOSOTROS</span>
+                    <h2>Creatividad + Tecnología + Resultados</h2>
+                    <p>En TELKRUX creemos que cada negocio tiene una historia única que contar. Por eso, no diseñamos simples sitios web, creamos <strong>experiencias digitales</strong> que conectan con tu audiencia y generan resultados reales.</p>
+                    <p>Nos especializamos en tres servicios clave: Web Institucional, Landing Pages y Mantenimiento Mensual. Sin complicaciones, con precios claros y calidad profesional.</p>
+                </div>
+                <div class="nosotros-image">
+                    <div class="image-wrapper">
+                        <div style="background: linear-gradient(135deg, #0A0A0C, #1F2026); height: 350px; border-radius: 24px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1rem; border: 1px solid rgba(212, 175, 55, 0.2);">
+                            <i class="fas fa-code" style="font-size: 4rem; color: #D4AF37;"></i>
+                            <i class="fas fa-palette" style="font-size: 3rem; color: #E6C27A;"></i>
+                            <p style="color: #9CA3AF;">Diseño + Desarrollo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- POR QUÉ CÓDIGO PURO (NO WORDPRESS) -->
+    <section class="ventajas-codigo">
+        <div class="container">
+            <div class="ventajas-grid">
+                <div class="ventajas-texto">
+                    <span class="section-tag">✦ CÓDIGO PURO</span>
+                    <h2>¿Por qué no usamos <span class="highlight">WordPress?</span></h2>
+                    <p>En TELKRUX creemos que tu negocio merece algo más que una plantilla genérica. Por eso desarrollamos todas nuestras webs con <strong>código puro (HTML, CSS, JavaScript)</strong>.</p>
+                    <ul class="ventajas-lista">
+                        <li><i class="fas fa-tachometer-alt"></i> Velocidad ultrarrápida</li>
+                        <li><i class="fas fa-shield-alt"></i> Seguridad sin vulnerabilidades</li>
+                        <li><i class="fas fa-code"></i> Diseño 100% personalizado</li>
+                        <li><i class="fas fa-chart-line"></i> Mejor posicionamiento SEO</li>
+                    </ul>
+                    <a href="codigo.html" class="btn-ventaja">
+                        Conoce más beneficios <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="ventajas-icono">
+                    <i class="fas fa-code"></i>
+                    <i class="fas fa-times-circle"></i>
+                    <i class="fab fa-wordpress"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO (SOLO WHATSAPP Y CORREO) -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">✦ CONTACTO</span>
+                <h2>Hablemos de tu proyecto</h2>
+                <p>Elige el medio que prefieras. Te responderemos en menos de 24 horas.</p>
+            </div>
+            <div class="contacto-simple">
+                <div class="contacto-card-wsp">
+                    <div class="contacto-icon"><i class="fab fa-whatsapp"></i></div>
+                    <h3>WhatsApp</h3>
+                    <p>Respuesta rápida. Escríbenos ahora.</p>
+                    <a href="https://wa.me/56912345678?text=Hola%20TELKRUX%2C%20necesito%20informaci%C3%B3n%20sobre%20sus%20servicios" class="btn-wsp" target="_blank">
+                        Enviar WhatsApp <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="contacto-card-email">
+                    <div class="contacto-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Correo Electrónico</h3>
+                    <p>Para consultas más detalladas o presupuestos.</p>
+                    <a href="mailto:hola@telkruxpaginas.com?subject=Consulta%20sobre%20servicios%20web" class="btn-email">
+                        Enviar Correo <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo"><span class="logo-text">TELKRUX</span><span class="logo-dot">✦</span></div>
+                    <p>Creamos experiencias digitales que transforman negocios.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="portafolio.html">Portafolio</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#servicios">Web Institucional</a></li>
+                        <li><a href="#servicios">Landing Page</a></li>
+                        <li><a href="#servicios">Mantenimiento Mensual</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TELKRUX. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

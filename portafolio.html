@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TELKRUX | Portafolio de proyectos</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Estilos adicionales específicos para la página de portafolio */
+        .portafolio-header {
+            min-height: 40vh;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--gray-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px 60px;
+        }
+
+        .portafolio-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .portafolio-header p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .proyectos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 60px 0;
+        }
+
+        .proyecto-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            overflow: hidden;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .proyecto-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--cyan);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .proyecto-imagen {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e, #2a2a3e);
+            position: relative;
+        }
+
+        .proyecto-imagen i {
+            font-size: 4rem;
+        }
+
+        .proyecto-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .proyecto-categoria {
+            display: inline-block;
+            font-size: 0.7rem;
+            color: var(--cyan);
+            background: rgba(0, 229, 255, 0.1);
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+            margin-bottom: 0.8rem;
+            align-self: flex-start;
+        }
+
+        .proyecto-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .proyecto-info p {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .proyecto-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            background: rgba(255,255,255,0.05);
+            padding: 0.2rem 0.6rem;
+            border-radius: 50px;
+            color: var(--gray);
+        }
+
+        .btn-proyecto {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--cyan);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: gap 0.3s;
+            margin-top: auto;
+        }
+
+        .btn-proyecto:hover {
+            gap: 0.8rem;
+        }
+
+        .filtros-portafolio {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem auto 0;
+        }
+
+        .filtro-btn {
+            background: transparent;
+            border: 1px solid var(--gray-dark);
+            color: var(--gray);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .filtro-btn:hover,
+        .filtro-btn.active {
+            border-color: var(--cyan);
+            color: var(--cyan);
+            background: rgba(0, 229, 255, 0.1);
+        }
+
+        /* Animación para los proyectos al filtrar */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .proyecto-card {
+            animation: fadeInUp 0.4s ease;
+        }
+
+        @media (max-width: 768px) {
+            .proyectos-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .portafolio-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">TELKRUX</span>
+                <span class="logo-dot">✦</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="portafolio.html" class="nav-link active">Portafolio</a></li>
+                <li><a href="index.html#testimonios" class="nav-link">Testimonios</a></li>
+                <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER DEL PORTAFOLIO -->
+    <section class="portafolio-header">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-text">✦ NUESTROS TRABAJOS</span>
+            </div>
+            <h1>Portafolio de <span class="gradient-text">proyectos</span></h1>
+            <p>Conoce algunos de los sitios web que hemos desarrollado para nuestros clientes.<br>Cada proyecto es único y está diseñado a la medida.</p>
+            <div class="filtros-portafolio" id="filtros">
+                <button class="filtro-btn active" data-filtro="todos">Todos</button>
+                <button class="filtro-btn" data-filtro="landing">Landing Pages</button>
+                <button class="filtro-btn" data-filtro="institucional">Webs Institucionales</button>
+                <button class="filtro-btn" data-filtro="educacion">Educación</button>
+                <button class="filtro-btn" data-filtro="carta">Cartas Digitales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GRID DE PROYECTOS ORDENADO POR CATEGORÍA -->
+    <div class="container">
+        <div class="proyectos-grid" id="proyectosGrid">
+            
+            <!-- Landing Page - Cafetería Horizonte -->
+            <div class="proyecto-card" data-tipo="landing">
+                <div class="proyecto-imagen" style="background: linear-gradient(135deg, #3E2723, #6B3E1F);">
+                    <i class="fas fa-mug-hot" style="color: #C8A85B;"></i>
+                </div>
+                <div class="proyecto-info">
+                    <span class="proyecto-categoria">✦ Landing Page</span>
+                    <h3>Cafetería Horizonte</h3>
+                    <p>Café de especialidad con diseño cálido y acogedor. Ideal para negocios gastronómicos.</p>
+                    <div class="proyecto-tags">
+                        <span class="tag">Cafetería</span>
+                        <span class="tag">Landing</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                    <a href="lading.html" class="btn-proyecto" target="_blank">Ver proyecto <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Web Institucional - Vertex Tech -->
+            <div class="proyecto-card" data-tipo="institucional">
+                <div class="proyecto-imagen" style="background: linear-gradient(135deg, #00A86B, #007A4D);">
+                    <i class="fas fa-code" style="color: #FFFFFF;"></i>
+                </div>
+                <div class="proyecto-info">
+                    <span class="proyecto-categoria">✦ Web Institucional + Subpáginas</span>
+                    <h3>Vertex Tech</h3>
+                    <p>Empresa tecnológica con diseño verde ESG moderno. Incluye 4 páginas (Inicio, Nosotros, Servicios, Contacto).</p>
+                    <div class="proyecto-tags">
+                        <span class="tag">Tecnología</span>
+                        <span class="tag">Multi-página</span>
+                        <span class="tag">Moderno</span>
+                    </div>
+                    <a href="wi.html" class="btn-proyecto" target="_blank">Ver proyecto <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Web Institucional - Liceo Nueva Esperanza (Educación) -->
+            <div class="proyecto-card" data-tipo="educacion">
+                <div class="proyecto-imagen" style="background: linear-gradient(135deg, #0A4B7A, #1E6A9F);">
+                    <i class="fas fa-school" style="color: white;"></i>
+                </div>
+                <div class="proyecto-info">
+                    <span class="proyecto-categoria">✦ Sitio Web Institucional</span>
+                    <h3>Liceo Nueva Esperanza</h3>
+                    <p>Sitio moderno, claro y accesible para toda la comunidad educativa. Incluye noticias, galería, horarios y secciones académicas.</p>
+                    <div class="proyecto-tags">
+                        <span class="tag">Educación</span>
+                        <span class="tag">Responsive</span>
+                        <span class="tag">HTML/CSS/JS</span>
+                    </div>
+                    <a href="lb.html" class="btn-proyecto" target="_blank">Ver proyecto <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Carta Digital - Restaurante Fuego & Sal -->
+            <div class="proyecto-card" data-tipo="carta">
+                <div class="proyecto-imagen" style="background: linear-gradient(135deg, #0A0A0A, #8B0000);">
+                    <i class="fas fa-utensils" style="color: #C6A43F;"></i>
+                </div>
+                <div class="proyecto-info">
+                    <span class="proyecto-categoria">✦ Carta Digital</span>
+                    <h3>Fuego & Sal</h3>
+                    <p>Carta interactiva para restaurante de alta cocina. Con menú por categorías, precios y navegación suave.</p>
+                    <div class="proyecto-tags">
+                        <span class="tag">Restaurante</span>
+                        <span class="tag">Carta digital</span>
+                        <span class="tag">Interactivo</span>
+                    </div>
+                    <a href="carta.html" class="btn-proyecto" target="_blank">Ver proyecto <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LLAMADA A LA ACCIÓN -->
+    <section class="cta-portafolio" style="background: linear-gradient(135deg, var(--cyan), var(--purple)); padding: 60px 24px; text-align: center; margin-top: 40px;">
+        <div class="container">
+            <h2 style="color: var(--bg-dark); font-size: 2rem; margin-bottom: 0.5rem;">¿Necesitas un sitio web para tu negocio?</h2>
+            <p style="color: var(--bg-dark); opacity: 0.9; margin-bottom: 1.5rem;">Hablemos de tu proyecto y creemos algo increíble juntos.</p>
+            <a href="index.html#contacto" class="btn-primary" style="background: var(--bg-dark); color: var(--white);">Solicitar presupuesto <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo"><span class="logo-text">TELKRUX</span><span class="logo-dot">✦</span></div>
+                    <p>Creamos experiencias digitales que transforman negocios.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#servicios">Servicios</a></li>
+                        <li><a href="portafolio.html">Portafolio</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="index.html#servicios">Web Institucional</a></li>
+                        <li><a href="index.html#servicios">Landing Page</a></li>
+                        <li><a href="index.html#servicios">Mantenimiento Mensual</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TELKRUX. Todos los derechos reservados. | Diseño futurista para la próxima generación</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script>
+        // Filtros del portafolio mejorados
+        const filtros = document.querySelectorAll('.filtro-btn');
+        const proyectos = document.querySelectorAll('.proyecto-card');
+
+        filtros.forEach(filtro => {
+            filtro.addEventListener('click', () => {
+                // Actualizar botón activo
+                filtros.forEach(f => f.classList.remove('active'));
+                filtro.classList.add('active');
+
+                const valor = filtro.getAttribute('data-filtro');
+
+                proyectos.forEach(proyecto => {
+                    if (valor === 'todos' || proyecto.getAttribute('data-tipo') === valor) {
+                        proyecto.style.display = 'flex';
+                        proyecto.style.animation = 'fadeInUp 0.5s ease';
+                    } else {
+                        proyecto.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

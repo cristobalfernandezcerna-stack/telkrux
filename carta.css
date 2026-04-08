@@ -1,0 +1,328 @@
+/* ========== FUEGO & SAL - CARTA DE RESTAURANTE ELEGANTE ========== */
+
+:root {
+    --negro: #0A0A0A;
+    --negro-suave: #1A1A1A;
+    --dorado: #C6A43F;
+    --burdeos: #8B0000;
+    --blanco: #FFFFFF;
+    --gris-claro: #F5F5F5;
+    --gris-texto: #666666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--negro);
+    color: var(--gris-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* HERO */
+.hero-carta {
+    min-height: 60vh;
+    background: linear-gradient(135deg, var(--negro) 0%, var(--burdeos) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 120px 24px 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 40%, rgba(198, 164, 63, 0.05) 0%, transparent 60%);
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.restaurante-nombre {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: var(--dorado);
+    margin-bottom: 1rem;
+}
+
+.hero-carta h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--blanco);
+    margin-bottom: 0.5rem;
+}
+
+.hero-carta p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+}
+
+.hero-decor {
+    margin-top: 2rem;
+    color: var(--dorado);
+    letter-spacing: 5px;
+}
+
+/* MENÚ DE NAVEGACIÓN */
+.menu-nav {
+    background: var(--negro-suave);
+    border-bottom: 1px solid rgba(198, 164, 63, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s;
+}
+
+.menu-nav.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.menu-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.menu-nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menu-nav a:hover {
+    color: var(--dorado);
+}
+
+/* SECCIONES DEL MENÚ */
+.seccion-menu {
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(198, 164, 63, 0.1);
+}
+
+.seccion-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.categoria-tag {
+    display: inline-block;
+    background: rgba(198, 164, 63, 0.1);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    color: var(--dorado);
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.seccion-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--blanco);
+    margin-bottom: 0.5rem;
+}
+
+.decor-linea {
+    width: 60px;
+    height: 2px;
+    background: var(--dorado);
+    margin: 1rem auto 0;
+}
+
+/* GRID DE PLATOS */
+.menu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(198, 164, 63, 0.2);
+}
+
+.menu-item.destacado {
+    background: rgba(198, 164, 63, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+    border-bottom: none;
+}
+
+.item-info {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.item-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--blanco);
+    margin-bottom: 0.3rem;
+}
+
+.chef {
+    font-size: 0.7rem;
+    color: var(--dorado);
+    font-weight: normal;
+    margin-left: 0.5rem;
+}
+
+.item-info p {
+    font-size: 0.85rem;
+    color: var(--gris-texto);
+}
+
+.item-precio {
+    font-weight: 600;
+    color: var(--dorado);
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+/* VINOS */
+.vinos-grid .menu-item {
+    border-bottom-color: rgba(198, 164, 63, 0.15);
+}
+
+/* CONTACTO RESTAURANTE */
+.contacto-restaurante {
+    background: var(--negro-suave);
+    padding: 60px 0;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contacto-info i {
+    font-size: 2rem;
+    color: var(--dorado);
+    margin-bottom: 1rem;
+}
+
+.contacto-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--blanco);
+    margin-bottom: 0.5rem;
+}
+
+.contacto-info p {
+    font-size: 0.85rem;
+}
+
+.boton-reserva {
+    text-align: center;
+}
+
+.btn-reservar {
+    display: inline-block;
+    background: transparent;
+    color: var(--dorado);
+    padding: 0.8rem 2rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--dorado);
+    transition: all 0.3s;
+}
+
+.btn-reservar:hover {
+    background: var(--dorado);
+    color: var(--negro);
+}
+
+/* FOOTER */
+.footer-carta {
+    background: var(--negro);
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(198, 164, 63, 0.1);
+}
+
+.logo-footer {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--dorado);
+    margin-bottom: 0.5rem;
+}
+
+.footer-carta p {
+    font-size: 0.7rem;
+    color: var(--gris-texto);
+}
+
+.copyright {
+    margin-top: 0.5rem;
+    font-size: 0.65rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-carta h1 {
+        font-size: 2.5rem;
+    }
+    
+    .menu-nav ul {
+        gap: 1rem;
+    }
+    
+    .menu-nav a {
+        font-size: 0.7rem;
+    }
+    
+    .seccion-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .menu-item {
+        flex-direction: column;
+    }
+    
+    .item-info {
+        padding-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .item-precio {
+        align-self: flex-end;
+    }
+    
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
